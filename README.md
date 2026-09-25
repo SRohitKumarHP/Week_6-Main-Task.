@@ -18,10 +18,31 @@ Upload the metal_defect dataset to Google Colab, train, and download the Model:
 
 After downloading the my_model file. Open Google Chrome and download Anaconda. Download the one suitable for your Operating System. (Windows, Linux, or Mac OS).
 
+Folder_Structure:
+my_model/
+|--train\
+|  |--weights\
+|--yolo_detect.py
+|--my_model.pt
+|--1.jpg
+.
+.
+
+Download the yolo_detect.py and the images that are provided in this GitHub Week_6 task into the my_model folder. Following the above folder Structure
+
 Steps in Anaconda Prompt Window:
   1. Search for Anaconda Prompt on your PC
   2. In the Anaconda Prompt, create an environment by running the command:
-     create --name yolo_env1 python=3.12
+     > create --name yolo_env1 python=3.12
   3. Then activate the environment and follow the commands:
-     conda activate yolo_env1
-  4. Install the library pip install ultralytics
+     > conda activate yolo_env1
+  4. In the Anaconda prompt window set the path where the my_model folder is available.
+  5. After setting correct path Install the library
+     > pip install ultralytics
+  6. Use this link https://pytorch.org/get-started/locally/ for video nvidia GPU. Run this command:
+     > pip3 install --upgrade torch torchvision --index-url https://download.pytorch.org/whl/cu132
+  8. Then run the command:
+     > python yolo_detect.py --model my_model.pt --source <file_name>
+  9. You can keep any <file_name> as per the provided above images and video file.
+  10. To run the live video for detection run the command as:
+      > python yolo_detect.py --model my_model.pt --source usb0
